@@ -157,20 +157,6 @@ inherently version-fragile.)
 
 ---
 
-## ⚠️ Limitations
-
-- 🧩 Tab renaming walks Burp's **Swing component tree**, which is _not_ a public API and can break
-  when PortSwigger changes Burp's UI internals. If tabs stop being renamed after a Burp update,
-  that's the likely cause.
-- ⌨️ **`Ctrl+R` auto-naming is Montoya-only.** Burp's hotkey model is one-combo-one-command, so
-  binding `Ctrl+R` here means this extension owns it. If `Ctrl+R` does nothing on your build, either
-  the built-in kept the binding (use the right-click menu) or change `SEND_HOTKEY` to e.g.
-  `Ctrl+Alt+R` and rebuild. The legacy build covers **right-click only**.
-- 🔢 Only tabs still showing Burp's **default numeric title** are renamed — your hand-named tabs are
-  always safe.
-
----
-
 ## 📄 License
 
 Released under the [MIT License](LICENSE).
