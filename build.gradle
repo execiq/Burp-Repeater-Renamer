@@ -1,0 +1,29 @@
+// Alternative to pom.xml — build with:  gradle clean jar
+// Output: build/libs/repeater-tab-renamer-1.0.0.jar
+
+plugins {
+    id 'java'
+}
+
+group = 'com.example'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 'compileOnly' == Maven 'provided': Burp supplies the Montoya API at runtime.
+    compileOnly 'net.portswigger.burp.extensions:montoya-api:2026.4'
+}
+
+java {
+    // Burp Suite 2023+ bundles a Java 17+ runtime.
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks.named('jar') {
+    archiveBaseName = 'repeater-tab-renamer'
+}

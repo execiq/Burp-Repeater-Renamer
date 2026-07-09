@@ -1,0 +1,25 @@
+# ---- Build output ----
+target/
+build/
+.gradle/
+out/
+bin/
+*.class
+
+# ---- IDE / editor ----
+.idea/
+*.iml
+*.ipr
+*.iws
+.settings/
+.classpath
+.project
+.vscode/
+*.swp
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# NOTE: dist/*.jar is intentionally tracked so users can load the extension
+# without building it themselves.
